@@ -1,0 +1,200 @@
+////////////////////////////////////////////////////////////////////////////////
+// 版权所有，2009-2012，北京汉邦高科数字技术有限公司
+// 本文件是未公开的，包含了汉邦高科的机密和专利内容
+////////////////////////////////////////////////////////////////////////////////
+// 文件名： audio_demo.c
+// 作者：   封欣明
+// 版本：   1.0
+// 日期：   2012-11-23
+// 描述：   音频输入输出测试程序
+// 历史记录：
+///////////////////////////////////////////////////////////////////////////////
+#include "common/ipc_common.h"
+#include "audio/audio_in.h"
+#include "audio/audio_out.h"
+
+HB_S32 fd_talkback = -1;
+HB_S32 fd_listen = -1;
+HB_S32 fd_audioout = -1;
+
+HB_HANDLE handle_in[2] = {0};
+HB_HANDLE handle_out = NULL;
+
+//对讲的回调函数
+HB_S32 audio_talkback_callback(HB_HANDLE handle, AUDIO_IN_DATA_HANDLE pdata, HB_VOID *pcontext)
+{
+    HB_S32 ret = -1;
+
+    ret = write(fd_talkback, pdata->pdata_addr, pdata->data_size);
+    if (ret != pdata->data_size)
+    {
+        printf("write file error !\n");
+    }
+    /*
+    data_out.data_addr = pdata->data_addr;
+    data_out.data_size = pdata->data_size;
+
+    ret = audio_out_ioctrl(handle_out, SND_AUDIO_DATA, (void *)&data_out,sizeof(AUDIO_OUT_DATA), NULL, NULL);
+    if (ret)
+    {
+        printf("IOCTRL ERROR !\n");
+        return -1;
+    }
+    */
+
+    return HB_SUCCESS;
+}
+
+
+//视频监的回调函数
+HB_S32 audio_listen_callback(HB_HANDLE handle, AUDIO_IN_DATA_HANDLE pdata, HB_VOID *pcontext)
+{
+    HB_S32 ret = -1;
+
+    ret = write(fd_listen, pdata->pdata_addr, pdata->data_size);
+    if (ret != pdata->data_size)
+    {
+        printf("write file error !\n");
+    }
+}
+
+HB_S32 main(HB_S32 argc, HB_CHAR *argv[])
+{
+    HB_CHAR rc[102400];
+    AUDIO_OUT_DATA_OBJ data;
+    AUDIO_IN_ARG_OBJ arg[2];
+    AUDIO_OUT_DECODE_CFG_OBJ arg_out;
+
+    arg[0].callback = audio_talkback_callback;
+    arg[0].config.sample_rate = 8000;
+
+    arg[1].callback = audio_listen_callback;
+    arg[1].config.sample_rate = 8000;
+
+    arg_out.sample_rate = 8000;
+    HB_S32 ret = HB_FAILURE;
+
+    fd_talkback = open("./audio_talkback.raw" , O_CREAT | O_RDWR | O_TRUNC, 0777);
+    if (fd_talkback < 0)
+    {
+        printf("open file ./audio_talkback.raw error !\n");
+        return HB_FAILURE;
+    }
+
+    fd_listen = open("./audio_listen.raw" , O_CREAT | O_RDWR | O_TRUNC, 0777);
+    if (fd_listen < 0)
+    {
+        printf("open file ./audio_listen.raw error !\n");
+        return HB_FAILURE;
+    }
+
+    ret = audio_in_open(&handle_in[0], arg[0], NULL);
+    if (ret)
+    {
+        printf("OPEN handle_in[0] ERROR !\n");
+        return HB_FAILURE;
+    }
+
+    ret = audio_in_start(handle_in[0], 0);
+    if (ret)
+    {
+        printf("START handle_in[0] ERROR !\n");
+        return HB_FAILURE;
+    }
+
+    ret = audio_in_open(&handle_in[1], arg[1], NULL);
+    if (ret)
+    {
+        printf("OPEN handle_in[1] ERROR !\n");
+        return HB_FAILURE;
+    }
+
+    ret = audio_in_start(handle_in[1], 0);
+    if (ret)
+    {
+        printf("START handle_in[1] ERROR !\n");
+        return HB_FAILURE;
+    }
+
+    sleep(5);
+
+    ret = audio_in_stop(handle_in[0]);
+    if (ret)
+    {
+        printf("STOP handle_in[0] ERROR !\n");
+        return HB_FAILURE;
+    }
+    ret = audio_in_close(handle_in[0]);
+    if (ret)
+    {
+        printf("STOP handle_in[0] ERROR !\n");
+        return HB_FAILURE;
+    }
+    close(fd_talkback);
+
+    ret = audio_in_stop(handle_in[1]);
+    if (ret)
+    {
+        printf("STOP handle_in[1] ERROR !\n");
+        return HB_FAILURE;
+    }
+    ret = audio_in_close(handle_in[1]);
+    if (ret)
+    {
+        printf("STOP handle_in[1] ERROR !\n");
+        return HB_FAILURE;
+    }
+    close(fd_listen);
+	
+    printf("CAPTURE DONE !\n");
+
+    fd_audioout = open("./audio_out.g722" , O_CREAT | O_RDWR | O_TRUNC, 0777);
+    if (fd_audioout < 0)
+    {
+        printf("open file ./audio_out.g722 error !\n");
+        return HB_FAILURE;
+    }
+
+    ret = audio_out_open(&handle_out, arg_out, NULL);
+    if (ret)
+    {
+        printf("OPEN handle_out ERROR !\n");
+        return HB_FAILURE;
+    }
+    ret = audio_out_start(handle_out, 0);
+    if (ret)
+    {
+        printf("START handle_out ERROR !\n");
+        return HB_FAILURE;
+    }
+
+    while(1)
+    {
+        if (0 == read(fd_audioout, rc, 120))
+        {
+            break;
+        }
+        data.pdata_addr = (void *)rc;
+        data.data_size = 120;
+        ret = audio_out_ioctrl(handle_out, SND_AUDIO_DATA, (void *)&data,sizeof(AUDIO_OUT_DATA_OBJ), NULL, NULL);
+        if (ret)
+        {
+            printf("IOCTRL handle_out ERROR !\n");
+            return HB_FAILURE;
+        }
+    }
+    ret = audio_out_stop(handle_out);
+    if (ret)
+    {
+        printf("STOP handle_out ERROR !\n");
+        return HB_FAILURE;
+    }
+    ret = audio_out_close(handle_out);
+    if (ret)
+    {
+        printf("STOP handle_out ERROR !\n");
+        return HB_FAILURE;
+    }
+
+    return HB_SUCCESS;
+}

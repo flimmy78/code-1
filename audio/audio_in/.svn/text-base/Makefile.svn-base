@@ -1,0 +1,60 @@
+include ../../../../Rules.make
+
+LIBA = libaudio_in.a  
+DEMO_NAME = audio_in_demo
+
+PRIVATE_PATH = $(MODULES_SRC_DIR)/audio/audio_in/inc
+INC_PATH += -I $(PRIVATE_PATH)
+
+LIBMODULES = -L $(MODULES_LIB_DIR)
+
+LIBS = $(LIB_PATH)/$(LIBA)
+LFLAGS += -lpthread -lm 
+    
+COMPILE = $(CC) $(CFLAGS) $(INC_PATH) -c  
+ifeq ($(PLATFORM), TI)
+ifeq ($(CHIP), DM36X)
+SRCS = $(wildcard src/*.c) $(wildcard src/ti/*.c)
+endif
+endif
+
+ifeq ($(PLATFORM), HISI)
+ifeq ($(CHIP), HI3518)
+SRCS = $(wildcard src/*.c) $(wildcard src/hi3518/*.c)
+endif
+endif
+
+ifeq ($(PLATFORM), AMBA)
+ifeq ($(CHIP), A5S)
+SRCS = $(wildcard src/*.c) $(wildcard src/a5s/*.c)
+endif
+ifeq ($(CHIP), A2)
+SRCS = $(wildcard src/*.c) $(wildcard src/a2/*.c)
+endif
+endif
+
+OBJS = $(patsubst %.c,%.o,$(SRCS)) 
+
+DEMO_SRC = demo/*.c
+DEMO_TARGET = demo/$(DEMO_NAME) 
+
+all:$(LIBA)  
+$(LIBA):$(OBJS)  
+	$(AR) $(LIBA) $(OBJS)
+	$(INSTALL) $(LIBA) $(MODULES_LIB_DIR) 
+	#make demo 
+
+%.o:%.c  
+	$(COMPILE) $< -o $@  
+    
+.PHONY:clean demo
+
+demo:
+	$(CC) -o $(DEMO_TARGET) $(CFLAGS) $(INC_PATH) $(DEMO_SRC) $(LFLAGS) $(LIBS)
+
+clean:  
+	rm -f $(OBJS) $(LIBA) 
+	rm -f $(DEMO_TARGET)
+install:
+	$(INSTALL) $(LIBA) $(MODULES_LIB_DIR)
+

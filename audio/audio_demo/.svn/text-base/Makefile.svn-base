@@ -1,0 +1,27 @@
+include ../../../../Rules.make
+
+DEMO_NAME = audio_demo
+
+ifeq ($(PLATFORM), AMBA)
+LIBPREBUILD = -L $(SDK_PATH)/prebuild/third-party/alsa/lib -lasound
+else
+LIBPREBUILD = -L $(LIB_PREBUILD_PATH) -lasound
+endif
+
+LIBMODULES = -L $(MODULES_LIB_DIR) -laudio_in -laudio_out
+
+LFLAGS += -lpthread -lm  
+
+DEMO_SRC = *.c
+DEMO_TARGET = $(DEMO_NAME) 
+    
+.PHONY:clean demo
+
+demo:
+	$(CC) -o $(DEMO_TARGET) $(CFLAGS) $(INC_PATH) $(DEMO_SRC) $(LFLAGS) $(LIBMODULES) $(LIBPREBUILD)
+
+clean:  
+	rm -f $(DEMO_TARGET)
+install:
+	$(INSTALL) $(LIBA) $(MODULES_LIB_DIR)
+
