@@ -1,6 +1,12 @@
+# ---- First Blood ----
 $ git init
 $ git add .
 $ git commit -m 'initial commit'
 $ git remote add origin https://github.com/jorneytu/code  (初次建立仓库)
 $ git push origin master
+
+# ---- 2 N E 1 ----
+$ git commit -m 'initial commit'
+$ git push origin master
+
 
