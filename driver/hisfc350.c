@@ -792,7 +792,7 @@ int show_reg_status(struct hisfc_spi *spi)
 
 		HISFC350_CMD_WAIT_CPU_FINISH(host);
 		regval = hisfc_read(host, HISFC350_CMD_DATABUF0);
-        printf("REG-STATUS-3 : 0x%x\n",regval);
+        printf("REG3-STATUS : 0x%x\n",regval);
         return regval;
 }
 int change_reg_status(struct hisfc_spi *spi, int value)
@@ -824,7 +824,7 @@ void hw_spi_4addr(struct hisfc_spi *spi)
     unsigned int value;
     value =0x2;
     change_reg_status(spi, value);
-    printf("->@_@<-\n");
+    printf("## ->@_@<- ##\n");
     show_reg_status(spi);
 
 }
