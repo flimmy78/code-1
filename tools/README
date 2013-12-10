@@ -1,0 +1,3 @@
+* iperf
+  ./configure --host= XXX
+  报错处理： 注释掉 config.h #define malloc rl_malloc

