@@ -10,3 +10,4 @@ $ git commit -m 'initial commit'
 $ git push origin master
 
 
+代码风格检查工具checkpatch.pl

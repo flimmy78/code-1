@@ -3,3 +3,11 @@
 * css的margin属性设置Div之间的间距
 
 * 网页跳转 location="xxx.html"
+
+* mysql 指令集
+create database hanbang;
+show databases;
+use hanbang;
+create table project_list(name varchar(20));
+create table project(name varchar(20), athur varchar(20), time varchar(20));
+drop database xxx;
