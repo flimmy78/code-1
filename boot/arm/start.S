@@ -268,7 +268,7 @@ clbss_l:str	r2, [r0]		/* clear loop...                    */
 	cmp	r0, r1
 	ble	clbss_l
 
-	ldr	pc, _start_armboot
+	ldr	pc, _start_armboot    /* jump to 0x80800000 + x ==> relocated */
 
 _start_armboot:
 	.word start_armboot

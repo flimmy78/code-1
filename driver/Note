@@ -39,3 +39,28 @@
    -  单处理器抢占内核下：自旋锁仅仅当作一个设置内核抢占的开关；
    -  多处理器下：此时才能完全发挥出自旋锁的作用，自旋锁在内核中主要用来防止多处理器中并发访问临界区，防止内核抢占造成的竞争。
 
+ * usb serial driver
+
+   usb-serial.c --  tty_register() 创建设备节点，加入tty_drivers 列表.
+
+                --  usb_register() 没有起太大作用，好像。
+
+				--  tty_open()     根据打开的设备节点的主次设备号，在tty_drivers
+				                   列表中查找通过tty_register()添加的driver。把driver的ops传给tty。
+
+   generic.c    --  提供给 usb-serial.c 函数调用，当作一个设备驱动参考，没什么作用。
+
+   pl2303.c     --  usb_serial_register() 添加到 usb_serial_drivers 列表。
+
+                --  usb_register() 注册USB驱动，然后probe函数通过查找
+				    usb_serial_drivers来匹配驱动;并把driver的ops等信息封装成serial，接着把serial通过
+				    get_free_serial()加入到serial_table;
+
+				--  tty_init_dev()负责把driver的ops传给tty,并查找serial_table 把pl2303的ops等信息传递
+				    给上tty的data，这样tty的函数就可以调用pl2303的读写和设置。
+
+				--  疑点：如何匹配serial_table中的serial。
+
+
+
+
