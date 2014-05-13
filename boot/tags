@@ -1,0 +1,433 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AFLAGS	config.mk	/^AFLAGS := -D__ASSEMBLY__$/;"	m
+AR	config.mk	/^AR := $(CROSS_COMPILE)ar$/;"	m
+ARM_REG_BASE	include/platform.h	6;"	d
+ASRC	arm/Makefile	/^ASRC := start.o$/;"	m
+BITMASK_PLLCTL_PLLOVER	include/platform.h	85;"	d
+BITMASK_PLLCTL_PLLTIME	include/platform.h	80;"	d
+BITOFFSET_PLLCTL_PLLOVER	include/platform.h	84;"	d
+BITOFFSET_PLLCTL_PLLTIME	include/platform.h	79;"	d
+BITVALUE_PLLCTL_PLLOVER	include/platform.h	86;"	d
+BITVALUE_PLLCTL_PLLTIME	include/platform.h	81;"	d
+BOOT_FROM_SPI	include/platform.h	51;"	d
+CC	config.mk	/^CC := $(CROSS_COMPILE)gcc$/;"	m
+CFG_BARGSIZE	include/hi3518c.h	213;"	d
+CFG_BOOT_PARAMS	include/hi3518c.h	133;"	d
+CFG_CLKS_IN_HZ	include/hi3518c.h	214;"	d
+CFG_CLK_BUS	include/hi3518c.h	57;"	d
+CFG_CMDLINE_HISTORYS	include/hi3518c.h	218;"	d
+CFG_DDR_PHYS_OFFSET	include/hi3518c.h	220;"	d
+CFG_DDR_SIZE	include/hi3518c.h	221;"	d
+CFG_ENV_ADDR	include/env_setup.h	5;"	d
+CFG_ENV_OFFSET	include/hi3518c.h	120;"	d
+CFG_ENV_SIZE	include/env_setup.h	7;"	d
+CFG_HZ	include/hi3518c.h	110;"	d
+CFG_LOAD_ADDR	include/hi3518c.h	215;"	d
+CFG_TIMERBASE	include/hi3518c.h	103;"	d
+CFG_TIMER_CLK	include/hi3518c.h	59;"	d
+CFG_TIMER_CTRL	include/hi3518c.h	105;"	d
+CFG_TIMER_PER	include/hi3518c.h	58;"	d
+CFLAGS	config.mk	/^CFLAGS := -I$(PWD)\/include$/;"	m
+CONFIG_ARP_TIMEOUT	include/hi3518c.h	172;"	d
+CONFIG_AUTO_COMPLETE	include/hi3518c.h	217;"	d
+CONFIG_AUTO_SD_UPDATE	include/hi3518c.h	253;"	d
+CONFIG_AUTO_USB_UPDATE	include/hi3518c.h	254;"	d
+CONFIG_BAUDRATE	include/hi3518c.h	147;"	d
+CONFIG_BOOTARGS	include/hi3518c.h	141;"	d
+CONFIG_BOOTCOMMAND	include/hi3518c.h	138;"	d
+CONFIG_BOOTDELAY	include/hi3518c.h	140;"	d
+CONFIG_BOOTFILE	include/hi3518c.h	146;"	d
+CONFIG_BOOTM_LINUX	include/hi3518c.h	152;"	d
+CONFIG_CMDLINE_EDITING	include/hi3518c.h	219;"	d
+CONFIG_CMDLINE_TAG	include/hi3518c.h	228;"	d
+CONFIG_CMD_EXT2	include/hi3518c.h	264;"	d
+CONFIG_CMD_FAT	include/hi3518c.h	263;"	d
+CONFIG_CMD_LOADB	include/hi3518c.h	167;"	d
+CONFIG_CMD_MEMORY	include/hi3518c.h	81;"	d
+CONFIG_CMD_MII	include/hi3518c.h	177;"	d
+CONFIG_CMD_MMC	include/hi3518c.h	275;"	d
+CONFIG_CMD_NET	include/hi3518c.h	174;"	d
+CONFIG_CMD_PING	include/hi3518c.h	176;"	d
+CONFIG_CMD_SAVEENV	include/hi3518c.h	127;"	d
+CONFIG_CMD_SF	include/hi3518c.h	66;"	d
+CONFIG_CMD_USB	include/hi3518c.h	283;"	d
+CONFIG_CONS_INDEX	include/hi3518c.h	244;"	d
+CONFIG_DOS_PARTITION	include/hi3518c.h	261;"	d
+CONFIG_ENV_IS_IN_SPI_FLASH	include/hi3518c.h	123;"	d
+CONFIG_ENV_OFFSET	include/hi3518c.h	125;"	d
+CONFIG_ENV_OVERWRITE	include/hi3518c.h	113;"	d
+CONFIG_ENV_SECT_SIZE	include/hi3518c.h	131;"	d
+CONFIG_ENV_SIZE	include/hi3518c.h	130;"	d
+CONFIG_ENV_SPI_ADDR	include/hi3518c.h	126;"	d
+CONFIG_ETHADDR	include/hi3518c.h	145;"	d
+CONFIG_ETHADDR_TAG	include/hi3518c.h	233;"	d
+CONFIG_ETHADDR_TAG_VAL	include/hi3518c.h	234;"	d
+CONFIG_FIT	include/hi3518c.h	295;"	d
+CONFIG_GENERIC_MMC	include/hi3518c.h	273;"	d
+CONFIG_HI3518	include/hi3518c.h	61;"	d
+CONFIG_HIMCI_HI3518	include/hi3518c.h	270;"	d
+CONFIG_HIMCI_V100	include/hi3518c.h	272;"	d
+CONFIG_HISFC350_BUFFER_BASE_ADDRESS	include/hi3518c.h	70;"	d
+CONFIG_HISFC350_CHIP_NUM	include/hi3518c.h	73;"	d
+CONFIG_HISFC350_PERIPHERY_REGBASE	include/hi3518c.h	72;"	d
+CONFIG_HISFC350_REG_BASE_ADDRESS	include/hi3518c.h	71;"	d
+CONFIG_INITRD_TAG	include/hi3518c.h	229;"	d
+CONFIG_IPADDR	include/hi3518c.h	143;"	d
+CONFIG_IPNC_ENV_OFFSET	include/hi3518c.h	296;"	d
+CONFIG_IRQ_BASE	include/hi3518c.h	94;"	d
+CONFIG_IRQ_STACK	include/hi3518c.h	91;"	d
+CONFIG_L2_OFF	include/hi3518c.h	32;"	d
+CONFIG_LEGACY_USB_INIT_SEQ	include/hi3518c.h	285;"	d
+CONFIG_MISC_INIT_R	include/hi3518c.h	231;"	d
+CONFIG_MMC	include/hi3518c.h	274;"	d
+CONFIG_NANDID_TAG	include/hi3518c.h	236;"	d
+CONFIG_NETMASK	include/hi3518c.h	142;"	d
+CONFIG_NET_HISFV300	include/hi3518c.h	184;"	d
+CONFIG_NET_HISFV300_3518	include/hi3518c.h	186;"	d
+CONFIG_NET_RETRY_COUNT	include/hi3518c.h	173;"	d
+CONFIG_NR_DRAM_BANKS	include/hi3518c.h	132;"	d
+CONFIG_PL011_CLOCK	include/hi3518c.h	241;"	d
+CONFIG_PL011_SERIAL	include/hi3518c.h	240;"	d
+CONFIG_PL01x_PORTS	include/hi3518c.h	243;"	d
+CONFIG_PRODUCTNAME	include/hi3518c.h	246;"	d
+CONFIG_SERVERIP	include/hi3518c.h	144;"	d
+CONFIG_SETUP_MEMORY_TAGS	include/hi3518c.h	230;"	d
+CONFIG_SPIID_TAG	include/hi3518c.h	237;"	d
+CONFIG_SPI_FLASH_HISFC350	include/hi3518c.h	67;"	d
+CONFIG_STACKSIZE	include/hi3518c.h	129;"	d
+CONFIG_SVC_STACK	include/hi3518c.h	92;"	d
+CONFIG_SYS_BAUDRATE_TABLE	include/hi3518c.h	164;"	d
+CONFIG_SYS_CBSIZE	include/hi3518c.h	210;"	d
+CONFIG_SYS_FAULT_ECHO_LINK_DOWN	include/hi3518c.h	178;"	d
+CONFIG_SYS_GBL_DATA_SIZE	include/hi3518c.h	90;"	d
+CONFIG_SYS_HZ	include/hi3518c.h	109;"	d
+CONFIG_SYS_LOAD_ADDR	include/hi3518c.h	154;"	d
+CONFIG_SYS_MALLOC_LEN	include/hi3518c.h	89;"	d
+CONFIG_SYS_MAXARGS	include/hi3518c.h	165;"	d
+CONFIG_SYS_MEMTEST_END	include/hi3518c.h	225;"	d
+CONFIG_SYS_MEMTEST_SCRATCH	include/hi3518c.h	226;"	d
+CONFIG_SYS_MEMTEST_START	include/hi3518c.h	223;"	d
+CONFIG_SYS_NO_FLASH	include/hi3518c.h	79;"	d
+CONFIG_SYS_PBSIZE	include/hi3518c.h	211;"	d
+CONFIG_SYS_PROMPT	include/hi3518c.h	209;"	d
+CONFIG_TFTP_TSIZE	include/hi3518c.h	161;"	d
+CONFIG_UPDATE_TFTP	include/hi3518c.h	297;"	d
+CONFIG_USB_OHCI	include/hi3518c.h	282;"	d
+CONFIG_USB_STORAGE	include/hi3518c.h	284;"	d
+CONFIG_VERSION_VARIABLE	include/hi3518c.h	208;"	d
+CONFIG_ZERO_BOOTDELAY_CHECK	include/hi3518c.h	155;"	d
+CONSOLE_PORT	driver/serial_pl01x.c	42;"	d	file:
+COPY	config.mk	/^COPY := $(CROSS_COMPILE)objcopy$/;"	m
+CRG_REG_BASE	include/platform.h	30;"	d
+CROSS_COMPILE	config.mk	/^CROSS_COMPILE := arm-hisiv100nptl-linux-$/;"	m
+CSRC	arm/Makefile	/^CSRC := $(wildcard lib\/*.o)$/;"	m
+DDRC_REG_BASE	include/platform.h	21;"	d
+DDR_MEM_BASE	include/platform.h	4;"	d
+DDR_PHY_BASE	include/platform.h	20;"	d
+DEBUG	arm/lib/board.c	2;"	d	file:
+F_Bit	arm/start.S	/^#define F_Bit     0x40$/;"	d
+GPIO0_REG_BASE	include/platform.h	18;"	d
+GPIO10_REG_BASE	include/platform.h	8;"	d
+GPIO11_REG_BASE	include/platform.h	7;"	d
+GPIO1_REG_BASE	include/platform.h	17;"	d
+GPIO2_REG_BASE	include/platform.h	16;"	d
+GPIO3_REG_BASE	include/platform.h	15;"	d
+GPIO4_REG_BASE	include/platform.h	14;"	d
+GPIO5_REG_BASE	include/platform.h	13;"	d
+GPIO6_REG_BASE	include/platform.h	12;"	d
+GPIO7_REG_BASE	include/platform.h	11;"	d
+GPIO8_REG_BASE	include/platform.h	10;"	d
+GPIO9_REG_BASE	include/platform.h	9;"	d
+HIETH_MII_RMII_MODE_D	include/hi3518c.h	190;"	d
+HIETH_MII_RMII_MODE_U	include/hi3518c.h	189;"	d
+HISFV_MII_MODE	include/hi3518c.h	187;"	d
+HISFV_PHY_D	include/hi3518c.h	192;"	d
+HISFV_PHY_U	include/hi3518c.h	191;"	d
+HISFV_RESET_GPIO_BASE	include/hi3518c.h	196;"	d
+HISFV_RESET_GPIO_BIT	include/hi3518c.h	198;"	d
+HISFV_RESET_GPIO_DATA	include/hi3518c.h	201;"	d
+HISFV_RESET_GPIO_DIR	include/hi3518c.h	197;"	d
+HISFV_RESET_GPIO_DIR_OUT	include/hi3518c.h	199;"	d
+HISFV_RESET_GPIO_EN	include/hi3518c.h	193;"	d
+HISFV_RMII_MODE	include/hi3518c.h	188;"	d
+HW_REG	include/hi3518c.h	41;"	d
+IO_CONFIG_REG_BASE	include/platform.h	22;"	d
+IO_READ	driver/serial_pl01x.c	35;"	d	file:
+IO_WRITE	driver/serial_pl01x.c	34;"	d	file:
+IRQ_STATUS	include/hi3518c.h	97;"	d
+I_Bit	arm/start.S	/^#define I_Bit     0x80$/;"	d
+LD	config.mk	/^LD := $(CROSS_COMPILE)ld$/;"	m
+LDFLAGS	config.mk	/^LDFLAGS := -Bstatic -T u-boot.lds -Ttext $(TEXT_BASE)$/;"	m
+LEFT	common/vsprintf.c	147;"	d	file:
+LIB	arm/Makefile	/^LIB = libhi3518.a$/;"	m
+LIB	common/Makefile	/^LIB =  libcommon.a$/;"	m
+LIB	driver/Makefile	/^LIB =  libdriver.a$/;"	m
+MAX_CORNER_AA	include/platform.h	100;"	d
+MAX_CORNER_BB	include/platform.h	101;"	d
+MEM_BASE_DDR	include/hi3518c.h	88;"	d
+MEM_BASE_ITCM	include/platform.h	44;"	d
+MEM_CONF_ITCM_SIZE	include/platform.h	46;"	d
+MEM_SIZE_ITCM	include/platform.h	45;"	d
+MODE_BAD	arm/start.S	/^#define MODE_BAD  0x1F$/;"	d
+MODE_IRQ	arm/start.S	/^#define MODE_IRQ  0x12$/;"	d
+MODE_SVC	arm/start.S	/^#define MODE_SVC  0x13$/;"	d
+MODE_USR	arm/start.S	/^#define MODE_USR  0x10$/;"	d
+NANDC_REG_BASE	include/platform.h	92;"	d
+NAND_MEM_BASE	include/platform.h	93;"	d
+NAND_TEXT_ADRS	include/hi3518c.h	87;"	d
+NM	config.mk	/^NM:= $(CROSS_COMPILE)nm$/;"	m
+NOINT	arm/start.S	/^#define NOINT     0xc0$/;"	d
+NUM_PORTS	driver/serial_pl01x.c	45;"	d	file:
+NUM_TYPE	common/vsprintf.c	17;"	d	file:
+PLATFORM_LIBS	config.mk	/^PLATFORM_LIBS := -L \/opt\/hisi-linux-nptl\/arm-hisiv100-linux\/bin\/..\/lib\/gcc\/arm-hisiv100-linux-uclibcgnueabi\/4.4.1 -lgcc$/;"	m
+PLUS	common/vsprintf.c	145;"	d	file:
+PWD	config.mk	/^PWD := \/home\/jorney\/develop\/boot$/;"	m
+PWM_FREQ_OFFSET	include/platform.h	97;"	d
+PWM_REG_BASE	include/platform.h	19;"	d
+Q	config.mk	/^Q :=@$/;"	m
+READ_TIMER	include/hi3518c.h	106;"	d
+REG_BASE_MCI	include/hi3518c.h	271;"	d
+REG_BASE_SCTL	include/platform.h	25;"	d
+REG_BASE_SF	include/platform.h	41;"	d
+REG_CRG0_OFFSET	include/platform.h	55;"	d
+REG_CRG0_VALUE	include/platform.h	56;"	d
+REG_CRG10_OFFSET	include/platform.h	70;"	d
+REG_CRG1_OFFSET	include/platform.h	57;"	d
+REG_CRG1_VALUE	include/platform.h	58;"	d
+REG_CRG4_OFFSET	include/platform.h	61;"	d
+REG_CRG58_OFFSET	include/platform.h	73;"	d
+REG_CRG5_OFFSET	include/platform.h	62;"	d
+REG_CRG6_OFFSET	include/platform.h	65;"	d
+REG_CRG7_OFFSET	include/platform.h	66;"	d
+REG_CRG8_OFFSET	include/platform.h	67;"	d
+REG_ETH_CRG	include/platform.h	31;"	d
+REG_IRQ_ENABLE	include/hi3518c.h	95;"	d
+REG_PLLCTL_OFFSET	include/platform.h	76;"	d
+REG_SC_CTRL	include/platform.h	26;"	d
+REG_SC_SYSRES	include/platform.h	27;"	d
+REG_SYSSTAT	include/platform.h	49;"	d
+REG_TIMER_BGLOAD	include/platform.h	39;"	d
+REG_TIMER_CONTROL	include/platform.h	35;"	d
+REG_TIMER_INTCLR	include/platform.h	38;"	d
+REG_TIMER_RELOAD	include/platform.h	36;"	d
+REG_TIMER_VALUE	include/platform.h	37;"	d
+RTC_REG_BASE	include/platform.h	24;"	d
+SC_LOCKEN_OFFSET	include/platform.h	88;"	d
+SC_LOCKEN_VALUE	include/platform.h	89;"	d
+SFC_ADDR_MODE_REG	include/hi3518c.h	74;"	d
+SFC_MEM_BASE	include/platform.h	5;"	d
+SFC_REG_BASE	include/platform.h	42;"	d
+SF_TEXT_ADRS	include/hi3518c.h	86;"	d
+SIGN	common/vsprintf.c	144;"	d	file:
+SMALL	common/vsprintf.c	148;"	d	file:
+SPACE	common/vsprintf.c	146;"	d	file:
+SPACE_RARIO_DEFAULT	include/platform.h	98;"	d
+SPACE_RATIO_AA	include/platform.h	103;"	d
+SPACE_RATIO_BB	include/platform.h	104;"	d
+SPACE_RATIO_CC	include/platform.h	105;"	d
+SPECIAL	common/vsprintf.c	149;"	d	file:
+SRC	arm/lib/Makefile	/^SRC :=board.o$/;"	m
+SRC	common/Makefile	/^SRC := vsprintf.o div64.o$/;"	m
+SRC	driver/Makefile	/^SRC := serial_pl01x.o$/;"	m
+SRC	lib/Makefile	/^SRC := eabi_compat.o $/;"	m
+SYSTEM_MAP	Makefile	/^SYSTEM_MAP = $(NM) $1| grep -v '\\(compiled\\)\\|\\(\\.o$$\\)\\|\\( [aUw] \\)\\|\\(\\.\\.ng$$\\)\\|\\(LASH[RL]DI\\)'|LC_ALL=C sort$/;"	m
+S_FP	arm/start.S	/^#define S_FP		44$/;"	d
+S_FRAME_SIZE	arm/start.S	/^#define S_FRAME_SIZE	72$/;"	d
+S_IP	arm/start.S	/^#define S_IP		48$/;"	d
+S_LR	arm/start.S	/^#define S_LR		56$/;"	d
+S_OLD_R0	arm/start.S	/^#define S_OLD_R0	68$/;"	d
+S_PC	arm/start.S	/^#define S_PC		60$/;"	d
+S_PSR	arm/start.S	/^#define S_PSR		64$/;"	d
+S_R0	arm/start.S	/^#define S_R0		0$/;"	d
+S_R1	arm/start.S	/^#define S_R1		4$/;"	d
+S_R10	arm/start.S	/^#define S_R10		40$/;"	d
+S_R2	arm/start.S	/^#define S_R2		8$/;"	d
+S_R3	arm/start.S	/^#define S_R3		12$/;"	d
+S_R4	arm/start.S	/^#define S_R4		16$/;"	d
+S_R5	arm/start.S	/^#define S_R5		20$/;"	d
+S_R6	arm/start.S	/^#define S_R6		24$/;"	d
+S_R7	arm/start.S	/^#define S_R7		28$/;"	d
+S_R8	arm/start.S	/^#define S_R8		32$/;"	d
+S_R9	arm/start.S	/^#define S_R9		36$/;"	d
+S_SP	arm/start.S	/^#define S_SP		52$/;"	d
+TEXT_BASE	config.mk	/^TEXT_BASE := 0x80800000$/;"	m
+TEXT_BASE	include/hi3518c.h	29;"	d
+TIMER0_REG_BASE	include/platform.h	34;"	d
+TIMER1_REG_BASE	include/platform.h	33;"	d
+TIMER_LOAD_VAL	arm/lib/timer.c	39;"	d	file:
+TOPDIR	Makefile	/^TOPDIR := $(PWD)$/;"	m
+UART0_REG_BASE	include/platform.h	23;"	d
+UART_PL010_BAUD_115200	driver/serial_pl01x.h	83;"	d
+UART_PL010_BAUD_1200	driver/serial_pl01x.h	91;"	d
+UART_PL010_BAUD_14400	driver/serial_pl01x.h	87;"	d
+UART_PL010_BAUD_19200	driver/serial_pl01x.h	86;"	d
+UART_PL010_BAUD_230400	driver/serial_pl01x.h	82;"	d
+UART_PL010_BAUD_2400	driver/serial_pl01x.h	90;"	d
+UART_PL010_BAUD_38400	driver/serial_pl01x.h	85;"	d
+UART_PL010_BAUD_460800	driver/serial_pl01x.h	81;"	d
+UART_PL010_BAUD_4800	driver/serial_pl01x.h	89;"	d
+UART_PL010_BAUD_57600	driver/serial_pl01x.h	84;"	d
+UART_PL010_BAUD_9600	driver/serial_pl01x.h	88;"	d
+UART_PL010_CR	driver/serial_pl01x.h	56;"	d
+UART_PL010_CR_IIRLP	driver/serial_pl01x.h	66;"	d
+UART_PL010_CR_LPE	driver/serial_pl01x.h	61;"	d
+UART_PL010_CR_MSIE	driver/serial_pl01x.h	65;"	d
+UART_PL010_CR_RIE	driver/serial_pl01x.h	64;"	d
+UART_PL010_CR_RTIE	driver/serial_pl01x.h	62;"	d
+UART_PL010_CR_SIREN	driver/serial_pl01x.h	67;"	d
+UART_PL010_CR_TIE	driver/serial_pl01x.h	63;"	d
+UART_PL010_CR_UARTEN	driver/serial_pl01x.h	68;"	d
+UART_PL010_ICR	driver/serial_pl01x.h	58;"	d
+UART_PL010_IIR	driver/serial_pl01x.h	57;"	d
+UART_PL010_ILPR	driver/serial_pl01x.h	59;"	d
+UART_PL010_LCRH	driver/serial_pl01x.h	53;"	d
+UART_PL010_LCRH_BRK	driver/serial_pl01x.h	78;"	d
+UART_PL010_LCRH_EPS	driver/serial_pl01x.h	76;"	d
+UART_PL010_LCRH_FEN	driver/serial_pl01x.h	74;"	d
+UART_PL010_LCRH_PEN	driver/serial_pl01x.h	77;"	d
+UART_PL010_LCRH_STP2	driver/serial_pl01x.h	75;"	d
+UART_PL010_LCRH_WLEN_5	driver/serial_pl01x.h	73;"	d
+UART_PL010_LCRH_WLEN_6	driver/serial_pl01x.h	72;"	d
+UART_PL010_LCRH_WLEN_7	driver/serial_pl01x.h	71;"	d
+UART_PL010_LCRH_WLEN_8	driver/serial_pl01x.h	70;"	d
+UART_PL010_LCRL	driver/serial_pl01x.h	55;"	d
+UART_PL010_LCRM	driver/serial_pl01x.h	54;"	d
+UART_PL011_CR	driver/serial_pl01x.h	99;"	d
+UART_PL011_CR_CTSEN	driver/serial_pl01x.h	114;"	d
+UART_PL011_CR_DTR	driver/serial_pl01x.h	119;"	d
+UART_PL011_CR_IIRLP	driver/serial_pl01x.h	123;"	d
+UART_PL011_CR_LPE	driver/serial_pl01x.h	122;"	d
+UART_PL011_CR_OUT1	driver/serial_pl01x.h	117;"	d
+UART_PL011_CR_OUT2	driver/serial_pl01x.h	116;"	d
+UART_PL011_CR_RTS	driver/serial_pl01x.h	118;"	d
+UART_PL011_CR_RTSEN	driver/serial_pl01x.h	115;"	d
+UART_PL011_CR_RXE	driver/serial_pl01x.h	120;"	d
+UART_PL011_CR_SIREN	driver/serial_pl01x.h	124;"	d
+UART_PL011_CR_TXE	driver/serial_pl01x.h	121;"	d
+UART_PL011_CR_UARTEN	driver/serial_pl01x.h	125;"	d
+UART_PL011_FBRD	driver/serial_pl01x.h	97;"	d
+UART_PL011_IBRD	driver/serial_pl01x.h	96;"	d
+UART_PL011_IMSC	driver/serial_pl01x.h	100;"	d
+UART_PL011_IMSC_BEIM	driver/serial_pl01x.h	128;"	d
+UART_PL011_IMSC_CTSMIM	driver/serial_pl01x.h	136;"	d
+UART_PL011_IMSC_DCDMIM	driver/serial_pl01x.h	135;"	d
+UART_PL011_IMSC_DSRMIM	driver/serial_pl01x.h	134;"	d
+UART_PL011_IMSC_FEIM	driver/serial_pl01x.h	130;"	d
+UART_PL011_IMSC_OEIM	driver/serial_pl01x.h	127;"	d
+UART_PL011_IMSC_PEIM	driver/serial_pl01x.h	129;"	d
+UART_PL011_IMSC_RIMIM	driver/serial_pl01x.h	137;"	d
+UART_PL011_IMSC_RTIM	driver/serial_pl01x.h	131;"	d
+UART_PL011_IMSC_RXIM	driver/serial_pl01x.h	133;"	d
+UART_PL011_IMSC_TXIM	driver/serial_pl01x.h	132;"	d
+UART_PL011_LCRH	driver/serial_pl01x.h	98;"	d
+UART_PL011_LCRH_BRK	driver/serial_pl01x.h	112;"	d
+UART_PL011_LCRH_EPS	driver/serial_pl01x.h	110;"	d
+UART_PL011_LCRH_FEN	driver/serial_pl01x.h	108;"	d
+UART_PL011_LCRH_PEN	driver/serial_pl01x.h	111;"	d
+UART_PL011_LCRH_SPS	driver/serial_pl01x.h	103;"	d
+UART_PL011_LCRH_STP2	driver/serial_pl01x.h	109;"	d
+UART_PL011_LCRH_WLEN_5	driver/serial_pl01x.h	107;"	d
+UART_PL011_LCRH_WLEN_6	driver/serial_pl01x.h	106;"	d
+UART_PL011_LCRH_WLEN_7	driver/serial_pl01x.h	105;"	d
+UART_PL011_LCRH_WLEN_8	driver/serial_pl01x.h	104;"	d
+UART_PL011_PERIPH_ID0	driver/serial_pl01x.h	101;"	d
+UART_PL01x_DR	driver/serial_pl01x.h	32;"	d
+UART_PL01x_ECR	driver/serial_pl01x.h	34;"	d
+UART_PL01x_FR	driver/serial_pl01x.h	35;"	d
+UART_PL01x_FR_BUSY	driver/serial_pl01x.h	46;"	d
+UART_PL01x_FR_RXFE	driver/serial_pl01x.h	45;"	d
+UART_PL01x_FR_RXFF	driver/serial_pl01x.h	43;"	d
+UART_PL01x_FR_TMSK	driver/serial_pl01x.h	47;"	d
+UART_PL01x_FR_TXFE	driver/serial_pl01x.h	42;"	d
+UART_PL01x_FR_TXFF	driver/serial_pl01x.h	44;"	d
+UART_PL01x_RSR	driver/serial_pl01x.h	33;"	d
+UART_PL01x_RSR_BE	driver/serial_pl01x.h	38;"	d
+UART_PL01x_RSR_FE	driver/serial_pl01x.h	40;"	d
+UART_PL01x_RSR_OE	driver/serial_pl01x.h	37;"	d
+UART_PL01x_RSR_PE	driver/serial_pl01x.h	39;"	d
+WDG_REG_BASE	include/platform.h	29;"	d
+ZEROPAD	common/vsprintf.c	143;"	d	file:
+_TEXT_BASE	arm/start.S	/^_TEXT_BASE:$/;"	l
+__CONFIG_HI3518_H__	include/hi3518c.h	26;"	d
+__CONFIG__	include/config.h	2;"	d
+__ENV_SETUP_H__	include/env_setup.h	2;"	d
+__HI_CHIP_REGS_H__	include/platform.h	2;"	d
+__IO_UGLY__	include/io.h	2;"	d
+__LITTLE_ENDIAN	include/hi3518c.h	258;"	d
+__aeabi_unwind_cpp_pr0	lib/eabi_compat.c	/^void __aeabi_unwind_cpp_pr0(void)$/;"	f
+__div64_32	common/div64.c	/^int __div64_32(long *n, int base)$/;"	f
+__raw_readl	include/io.h	5;"	d
+__raw_writel	include/io.h	4;"	d
+__udelay	arm/lib/timer.c	/^void __udelay(unsigned long usec)$/;"	f
+_armboot_start	arm/start.S	/^_armboot_start:$/;"	l
+_bss_end	arm/start.S	/^_bss_end:$/;"	l
+_bss_start	arm/start.S	/^_bss_start:$/;"	l
+_start	arm/start.S	/^_start: b	reset$/;"	l
+_start_armboot	arm/start.S	/^_start_armboot:$/;"	l
+baudRate	driver/serial_pl01x.c	43;"	d	file:
+bitcheck	arm/start.S	/^bitcheck:$/;"	l
+check_remap	arm/start.S	/^check_remap:$/;"	l
+clear_bss	arm/start.S	/^clear_bss:$/;"	l
+copy_loop	arm/start.S	/^copy_loop:$/;"	l
+cover_IRQ	arm/lib/board.c	/^void cover_IRQ(void)$/;"	f
+debug	arm/lib/board.c	/^void debug(void)$/;"	f
+disable_irq	arm/start.S	/^disable_irq:$/;"	l
+do_IRQ	arm/lib/board.c	/^void do_IRQ(void)$/;"	f
+do_div	include/div64.h	25;"	d
+enable_irq	arm/start.S	/^enable_irq:$/;"	l
+exception_table	arm/start.S	/^exception_table:$/;"	l
+exception_table_end	arm/start.S	/^exception_table_end:$/;"	l
+get_bus_clk	include/hi3518c.h	42;"	d
+get_tbclk	arm/lib/timer.c	/^unsigned long get_tbclk(void)$/;"	f
+get_ticks	arm/lib/timer.c	/^unsigned long long get_ticks(void)$/;"	f
+get_timer	arm/lib/timer.c	/^unsigned long get_timer(unsigned long base)$/;"	f
+get_timer_masked	arm/lib/timer.c	/^unsigned long get_timer_masked(void)$/;"	f
+hex_asc	common/vsprintf.c	/^const char hex_asc[] = "0123456789abcdef";$/;"	v
+hex_asc_hi	common/vsprintf.c	22;"	d	file:
+hex_asc_lo	common/vsprintf.c	21;"	d	file:
+irq	arm/start.S	/^irq:$/;"	l
+is_digit	common/vsprintf.c	33;"	d	file:
+lastdec	arm/lib/timer.c	/^static unsigned long lastdec;$/;"	v	file:
+loop	arm/start.S	/^loop:$/;"	l
+noinline	common/vsprintf.c	18;"	d	file:
+number	common/vsprintf.c	/^static char *number(char *buf, unsigned NUM_TYPE num, int base, int size, int precision, int type)$/;"	f	file:
+pack_hex_byte	common/vsprintf.c	/^static inline char *pack_hex_byte(char *buf, unsigned short int byte)$/;"	f	file:
+panic	arm/lib/board.c	/^void panic(int reg)$/;"	f
+pl01x_getc	driver/serial_pl01x.c	/^static int pl01x_getc (int portnum)$/;"	f	file:
+pl01x_putc	driver/serial_pl01x.c	/^static void pl01x_putc (int portnum, char c)$/;"	f	file:
+pl01x_tstc	driver/serial_pl01x.c	/^static int pl01x_tstc (int portnum)$/;"	f	file:
+port	driver/serial_pl01x.c	/^static volatile unsigned char *const port[] = CONFIG_PL01x_PORTS;$/;"	v	file:
+print	arm/start.S	/^print:$/;"	l
+put_dec	common/vsprintf.c	/^static noinline char* put_dec(char *buf, unsigned NUM_TYPE num)$/;"	f	file:
+put_dec_full	common/vsprintf.c	/^static char* put_dec_full(char *buf, unsigned q)$/;"	f	file:
+put_dec_trunc	common/vsprintf.c	/^static char* put_dec_trunc(char *buf, unsigned q)$/;"	f	file:
+raise	lib/eabi_compat.c	/^int raise (int signum)$/;"	f
+release_IRQ	arm/lib/board.c	/^void release_IRQ(void)$/;"	f
+remap	arm/lib/board.c	/^void remap(void)$/;"	f
+reset	arm/start.S	/^reset:$/;"	l
+reset_timer	arm/lib/timer.c	/^void reset_timer(void)$/;"	f
+reset_timer_masked	arm/lib/timer.c	/^void reset_timer_masked(void)$/;"	f
+serial_getc	driver/serial_pl01x.c	/^int serial_getc (void)$/;"	f
+serial_init	driver/serial_pl01x.c	/^int serial_init (void)$/;"	f
+serial_putc	driver/serial_pl01x.c	/^void serial_putc (const char c)$/;"	f
+serial_puts	driver/serial_pl01x.c	/^void serial_puts (const char *s)$/;"	f
+serial_setbrg	driver/serial_pl01x.c	/^void serial_setbrg (void)$/;"	f
+serial_tstc	driver/serial_pl01x.c	/^int serial_tstc (void)$/;"	f
+set_timer	arm/lib/timer.c	/^void set_timer(unsigned long t)$/;"	f
+skip_atoi	common/vsprintf.c	/^static int skip_atoi(const char **s)$/;"	f	file:
+sprintf	common/vsprintf.c	/^int sprintf(char * buf, const char *fmt, ...)$/;"	f
+stack_setup	arm/start.S	/^stack_setup:$/;"	l
+start_armboot	arm/lib/board.c	/^int start_armboot(void)$/;"	f
+string	common/vsprintf.c	/^static char *string(char *buf, char *s, int field_width, int precision, int flags)$/;"	f	file:
+strnlen	common/vsprintf.c	/^int strnlen(char *s, int maxlen)$/;"	f
+success_fix	arm/lib/board.c	/^void success_fix(void)$/;"	f
+timer_init	arm/lib/timer.c	/^int timer_init(void)$/;"	f
+timer_irq_enable	arm/lib/timer.c	/^void timer_irq_enable(void)$/;"	f
+timestamp	arm/lib/timer.c	/^static unsigned long timestamp; \/* how long since last timer reset *\/$/;"	v	file:
+udelay_masked	arm/lib/timer.c	/^void udelay_masked(unsigned long usec)$/;"	f
+vsprintf	common/vsprintf.c	/^int vsprintf(char *buf, const char *fmt, va_list args)$/;"	f

@@ -88,6 +88,15 @@
 #define MEM_BASE_DDR			(DDR_MEM_BASE)
 #define CONFIG_SYS_MALLOC_LEN		(CONFIG_ENV_SIZE + 128*1024)
 #define CONFIG_SYS_GBL_DATA_SIZE	128
+#if 1
+#define CONFIG_IRQ_STACK	        512
+#define CONFIG_SVC_STACK	        512
+#endif
+
+#define CONFIG_IRQ_BASE             0x10140000
+#define REG_IRQ_ENABLE              0x10
+
+#define IRQ_STATUS                  0x00
 
 /*-----------------------------------------------------------------------
  * for timer configuration (udelay)

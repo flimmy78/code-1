@@ -141,6 +141,8 @@ copy_loop:
 #endif	/* CONFIG_SKIP_RELOCATE_UBOOT */
 stack_setup:
 	ldr	r0, _TEXT_BASE		/* upper 128 KiB: relocated uboot   */
+	sub	r0, r0, #CONFIG_SYS_MALLOC_LEN	/* malloc area		    */
+	sub	r0, r0, #CONFIG_SYS_GBL_DATA_SIZE /* bdinfo		    */
 	sub	r0, r0, #CONFIG_SVC_STACK
 	mov sp,r0
 
@@ -172,6 +174,20 @@ _start_armboot:
 	.word start_armboot   /* jump to 80800000 + x ! Tips : relocated  */
 
 
+.globl enable_irq
+enable_irq:
+	mrs	r0,CPSR
+	bic r0,r0,#0x80
+	msr cpsr_c,r0
+	mov pc,lr
+
+.globl disable_irq
+disable_irq:
+	mrs	r0,CPSR
+	orr r0,r0,#0x80
+	msr cpsr_c,r0
+	mov pc,lr
+
 
 
 #define S_FRAME_SIZE	72
@@ -179,8 +195,8 @@ _start_armboot:
 #define S_OLD_R0	72
 #define S_PSR		68
 #define S_PC		64
-#define S_LR		60
-#define S_SP		56
+#define S_LR		56
+#define S_SP		52
 
 #define S_IP		48
 #define S_FP		44
@@ -198,44 +214,61 @@ _start_armboot:
 
 
 	.macro	irq_save_svc_regs
-	stmdb	sp, {r0-r12}			@ Calling r0-r7
-
-	str lr,[sp, #-S_LR]
-
+	stmdb	sp, {r0 - r12}			@ Calling r0-r12
+	@ !!!! R8 NEEDS to be saved !!!! a reserved stack spot would be good.
+	sub	r8, sp, #S_PC
+#if 1
+	stmib	r8, {lr, sp}		@ Calling SP, LR
+#endif
 	msr CPSR_c,#MODE_IRQ|I_Bit|F_Bit
 	sub r0,lr,#4
 
 	msr CPSR_c,#MODE_SVC|I_Bit|F_Bit
-	str	r0, [sp, #-S_PC]		@ Save calling PC
+	str	r0, [r8, #0]		@ Save calling PC
 	mrs	r6, spsr
-	str	r6, [sp, #-S_PSR]		@ Save CPSR
+	str	r6, [r8, #-4]		@ Save CPSR
+	str sp, [r8, #-8]
 	.endm
 
 	.macro	irq_restore_svc_regs
-	ldmdb	sp, {r0-r12}		@ Calling r0 - r7 ... just r7 enough
+	ldmdb	sp, {r0 - r12}		@ Calling r0 - lr
 
-	ldr lr,[sp,#-S_LR]
+	ldr r0,[sp, #-S_PSR]
+	msr SPSR_cxsf, r0           @should be SPSP,not CPSP... understand ?
 
-	ldr r8,[sp, #-S_PSR]
-	msr SPSR_cxsf, r8           @should be SPSP,not CPSP... understand ?
-
+	ldr	r0, [sp, #-S_PC]			@ Get PC
+#if 1
 	ldr	pc, [sp, #-S_PC]			@ Get PC
+#endif
 	.endm
 irq:
-    /* in irq mode */
 	msr CPSR_c,#MODE_SVC|I_Bit|F_Bit
-
 	irq_save_svc_regs
 
 	msr CPSR_c,#MODE_IRQ|I_Bit|F_Bit
-
 	bl enter_IRQ
     bl do_IRQ
-    bl exit_IRQ
 
 	bic r0,r0,#MODE_BAD|NOINT
 	orr r0,r0,#MODE_SVC|F_Bit
 	msr CPSR_c,r0
 
+    bl exit_IRQ
 	irq_restore_svc_regs
+
+#if 0
+   mov r1,lr
+   mov r2,#31
+bitcheck:
+   mov r0,r1,lsr r2
+   and r0,r0,#0x1
+   add r0,r0,#0x30
+   bl print
+   sub r2,r2,#1
+
+   cmp r2,#0
+   bne bitcheck
+   mov r0,#13
+   bl print
+#endif
 

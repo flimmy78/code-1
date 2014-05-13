@@ -198,3 +198,19 @@ void udelay_masked(unsigned long usec)
 		diff = endtime - now;
 	} while (diff >= 0);
 }
+
+void timer_irq_enable(void)
+{
+
+#if 1
+	/* enable time irq */
+	__raw_writel(__raw_readl(CONFIG_IRQ_BASE + REG_IRQ_ENABLE)|( 1 << 3 ),
+			CONFIG_IRQ_BASE + REG_IRQ_ENABLE);
+#endif
+
+	/* enable sys irq */
+	__raw_writel(__raw_readl(CFG_TIMERBASE + REG_TIMER_CONTROL)|( 1 << 5 ),
+			CFG_TIMERBASE + REG_TIMER_CONTROL);
+
+	return;
+}

@@ -1,12 +1,13 @@
 -include config.mk
 ALIB += arm/libhi3518.a
 DLIBS += driver/libdriver.a
+DLIBS += common/libcommon.a
 TOPDIR := $(PWD)
 
 SYSTEM_MAP = $(NM) $1| grep -v '\(compiled\)\|\(\.o$$\)\|\( [aUw] \)\|\(\.\.ng$$\)\|\(LASH[RL]DI\)'|LC_ALL=C sort
 
 
-all: LIBS
+all: clean LIBS
 	@$(LD) $(LDFLAGS) $(ALIB) $(DLIBS) lib/eabi_compat.o $(PLATFORM_LIBS) -Map u-boot.map -o u-boot
 	$(Q)$(call SYSTEM_MAP ,u-boot) > System.map
 	@$(COPY) --gap-fill=0xff -O binary u-boot u-boot.bin
@@ -15,18 +16,19 @@ all: LIBS
 	$(Q)dd if=u-boot.bin of=./fb3 bs=1 skip=4160
 	$(Q)cat fb1 fb2 fb3 > uboot-2ne1.bin
 	$(Q)rm -f fb1 fb2 fb3
-	#@sudo cp uboot-2ne1.bin ~/tftp/
+	@sudo cp u-boot.bin ~/tftp/u-boot.bin
 
 LIBS:
 	@make -C driver
 	@make -C arm/lib
 	@make -C arm
 	@make -C lib
+	@make -C common
 
 clean:
 	@make -C driver clean
 	@make -C arm/lib clean
 	@make -C arm clean
 	@make -C lib clean
-	$(Q)rm *.o *.a *.map -f
+	$(Q)rm *.o *.a *.map u-boot.bin u-boot -f
 export TOPDIR

@@ -1,8 +1,9 @@
 -include $(TOPDIR)/config.mk
 
-EABI += eabi_compat.o
-all:$(EABI)
-	@echo "\t\n Compile lib ...\n"
+
+SRC := eabi_compat.o 
+ALL:$(SRC)
+	@echo "\t\n Compile drivers ... \n"
+
 clean:
 	@rm *.o *.a -f
-
