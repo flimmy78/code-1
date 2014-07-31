@@ -1,6 +1,0 @@
-1: lib/eabi_compat.c
-   解决编译链接的raise报错问题，涉及浮点操作。此文件编译成.o，在链接过程使用
-
-2: 编译过程需要指定链接库libgcc.a
-   PLATFORM_LIBS:= -L /opt/hisi-linux-nptl/arm-hisiv100-linux/bin/../lib/gcc/arm-hisiv100-linux-uclibcgnueabi/4.4.1 -lgcc
-
